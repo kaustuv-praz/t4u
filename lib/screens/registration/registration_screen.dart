@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:t4u/screens/guest_registration.dart';
-import 'package:t4u/screens/player_registration.dart';
-import '../widgets/circle_button.dart';
+import 'package:t4u/screens/registration/guest_registration.dart';
+import 'package:t4u/screens/registration/player_registration.dart';
+import '../../widgets/circle_button.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -20,7 +20,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                SizedBox(height: 100.0),
+                SizedBox(height: 10.0),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    color: Colors.black,
+                    onPressed: () {
+                      // Define the behavior when the back button is pressed.
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
+                SizedBox(height: 40.0),
                 Text(
                   'Registration',
                   style: TextStyle(
@@ -62,6 +74,35 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     : GuestRegistrationScreen(),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// widgets
+class Register_Btn extends StatelessWidget {
+  const Register_Btn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text('REGISTER'),
+        style: ElevatedButton.styleFrom(
+          primary: Colors.green,
+          textStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16.0,
+          ),
+          padding: EdgeInsets.symmetric(vertical: 15.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
           ),
         ),
       ),

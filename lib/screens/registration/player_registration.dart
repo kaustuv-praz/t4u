@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:t4u/screens/registration/login_details_screen.dart';
-import '../widgets/circle_button.dart';
-import '../widgets/text_form_field_with_icon.dart';
+import 'package:t4u/screens/registration/registration_screen.dart';
+import '../../widgets/circle_button.dart';
+import '../../widgets/text_form_field_with_icon.dart';
 
 class PlayerRegistrationScreen extends StatelessWidget {
   @override
@@ -106,24 +107,8 @@ class PlayerRegistrationScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 30.0),
-        Container(
-          width: double.infinity,
-          child: ElevatedButton(
-            onPressed: () {},
-            child: Text('REGISTER'),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.green,
-              textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16.0,
-              ),
-              padding: EdgeInsets.symmetric(vertical: 15.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
-          ),
-        ),
+        Register_Btn(),
+        SizedBox(height: 40.0),
       ],
     );
   }
